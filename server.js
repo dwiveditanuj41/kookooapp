@@ -4,7 +4,7 @@ var app = express();
 
 app.get('/', function(req, res){
 	
-	res.sendFile(__dirname + "/index.xml");
+	res.sendFile(__dirname + "/public/index.xml");
 })
 
 var server = app.listen(process.env.PORT || 3000, function(){
