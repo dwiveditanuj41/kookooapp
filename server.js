@@ -10,7 +10,13 @@ app.get('/', function(req, res){
 	console.log(req);
 })
 
-https.get('https://desolate-castle-29966.herokuapp.com/' , (resp) =>{console.log(resp)})
+https.get('https://desolate-castle-29966.herokuapp.com/' , (resp) =>{console.log(resp)
+
+		resp.on("GotDTMF", (data) =>{
+			console.log(data);
+		})
+
+})
 
 var server = app.listen(process.env.PORT || 3000, function(){
 	console.log("PORT is running on 3000");
