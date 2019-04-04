@@ -4,7 +4,7 @@
 <collectdtmf l="2" t="#" o="10000">
 
 <playtext>Please enter 1 if you are male 2 for female</playtext>
-<IF GotDTMF.data == 1> <playtext> MAA CUDAO </playtext></IF>
+
 </collectdtmf>
 
 </response>
