@@ -9,7 +9,7 @@ app.get('/', function(req, res){
 	
 })
 
-app.on("GetDTMF", (data) =>{console.log(data)});
+app.addEventListner("GetDTMF", (data) =>{console.log(data)});
 
 var server = app.listen(process.env.PORT || 3000, function(){
 	console.log("PORT is running on 3000");
