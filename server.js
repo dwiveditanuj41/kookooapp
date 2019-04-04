@@ -6,7 +6,7 @@ var app = express();
 app.get('/', function(req, res){
 	
 	res.sendFile(__dirname + "/public/index.xml");
-	console.log(req);
+	console.log(__dirname);
 	console.log(res);
 	
 })
@@ -17,5 +17,6 @@ app.get('/', function(req, res){
 
 var server = app.listen(process.env.PORT || 3000, function(){
 	console.log("PORT is running on 3000");
+	console.log(process.env.PORT);
 });
 
