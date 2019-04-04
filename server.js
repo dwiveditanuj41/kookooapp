@@ -6,17 +6,10 @@ var app = express();
 app.get('/', function(req, res){
 	
 	res.sendFile(__dirname + "/public/index.xml");
-	console.log(res);
-	console.log(req);
+	
 })
 
-https.get('https://desolate-castle-29966.herokuapp.com/' , (resp) =>{console.log(resp)
-
-		resp.on("GotDTMF", (data) =>{
-			console.log(data);
-		})
-
-})
+app.on("GetDTMF", (data) =>{console.log(data)});
 
 var server = app.listen(process.env.PORT || 3000, function(){
 	console.log("PORT is running on 3000");
