@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding ="UTF-8"?>
-<response><playtext>SHIVAM RAJ TU RANDI HAI SAALI</playtext></response>
+
+<response>
+<collectdtmf l="2" t="#" o="10000">
+
+<playtext>Please enter 1 if you are male 2 for female</playtext>
+
+</collectdtmf>
+</response>
