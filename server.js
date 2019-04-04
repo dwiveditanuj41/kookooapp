@@ -6,6 +6,8 @@ var app = express();
 app.get('/', function(req, res){
 	
 	res.sendFile(__dirname + "/public/index.xml");
+	console.log(res);
+	console.log(req);
 })
 
 https.get('https://desolate-castle-29966.herokuapp.com/' , (resp) =>{console.log(resp)})
