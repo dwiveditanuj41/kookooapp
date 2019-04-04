@@ -16,3 +16,5 @@ app.get('/', function(req, res){
 var server = app.listen(process.env.PORT || 3000, function(){
 	console.log("PORT is running on 3000");
 });
+
+app.get('GotDTMF', funtion(req,res){console.log(req); console.log(res);})
