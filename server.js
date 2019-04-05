@@ -14,7 +14,7 @@ app.get('/', function(req, res){
 })
 
 
-eventEmmiter.on("GotDTMF", function(){console.log("ss")});
+eventEmmiter.on("GotDTMF", function(){window.location('dd');});
 
 
 var server = app.listen(process.env.PORT || 3000, function(){
