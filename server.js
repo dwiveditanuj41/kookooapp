@@ -8,10 +8,6 @@ var app = express();
 app.get('/', function(req, res){
 	
 	res.sendFile(__dirname + "/public/index.xml");
-	console.log(__dirname);
-	console.log(res);
-
-	eventEmmiter.on("GotDTMF", function(req,res){res.send(req);} );
 	
 })
 
