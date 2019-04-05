@@ -14,7 +14,7 @@ app.get('/', function(req, res){
 })
 
 
-eventEmmiter.on("GotDTMF", function(){window.location('dd');});
+eventEmmiter.addListener("GotDTMF", function(req,res){res.send("chutiye");} );
 
 
 var server = app.listen(process.env.PORT || 3000, function(){
