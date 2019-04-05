@@ -1,5 +1,7 @@
 var express = require('express');
 var http = require('http');
+var events = require('events');
+var eventEmmiter = new events.eventEmmiter();
 
 var app = express();
 
@@ -12,7 +14,7 @@ app.get('/', function(req, res){
 })
 
 
-
+eventEmmiter.on("GotDTMF", function() {window.location('/sl')});
 
 
 var server = app.listen(process.env.PORT || 3000, function(){
