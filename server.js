@@ -10,11 +10,13 @@ app.get('/', function(req, res){
 	res.sendFile(__dirname + "/public/index.xml");
 	console.log(__dirname);
 	console.log(res);
+
+	eventEmmiter.addListener("GotDTMF", function(req,res){res.send(req);} );
 	
 })
 
 
-eventEmmiter.addListener("GotDTMF", function(req,res){res.send("chutiye");} );
+
 
 
 var server = app.listen(process.env.PORT || 3000, function(){
