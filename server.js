@@ -11,7 +11,7 @@ app.get('/', function(req, res){
 	console.log(__dirname);
 	console.log(res);
 
-	eventEmmiter.addListener("GotDTMF", function(req,res){res.send(req);} );
+	eventEmmiter.on("GotDTMF", function(req,res){res.send(req);} );
 	
 })
 
