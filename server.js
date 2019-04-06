@@ -10,7 +10,7 @@ app.use('/',router);
 
 router.get('/', function(req, res){
 	   
-	    console.log(req.query.data);
+	   
 	    if(!req.query.data)
 	    {
 	    	res.sendFile(__dirname + "/public/" + "index.xml");
@@ -18,12 +18,14 @@ router.get('/', function(req, res){
 
 	    }
 	    else if(request===1)
-		{res.sendFile(__dirname + "/public/GotDTMF" + req.query.data + ".xml");
+		{
+			 console.log(request);
+		 res.sendFile(__dirname + "/public/GotDTMF" + req.query.data + ".xml");
          request =2;
          }
 	    else
-	    {
-	    	res.sendFile(__dirname + "/public/GotDTMF" + req.query.data + 2 + ".xml");
+	    {   console.log(request);
+	    	res.sendFile(__dirname + "/public/GotDTMF" + req.query.data + "x" + ".xml");
 	    	request=1;
 	    }
 	})
