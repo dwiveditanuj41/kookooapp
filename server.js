@@ -3,8 +3,9 @@ var http = require('https');
 var events = require('events');
 var eventEmmiter = new events.EventEmitter();
 var router=express.Router()
-
 var app = express();
+var request;
+
 app.use('/',router);
 
 router.get('/', function(req, res){
@@ -13,10 +14,18 @@ router.get('/', function(req, res){
 	    if(!req.query.data)
 	    {
 	    	res.sendFile(__dirname + "/public/" + "index.xml");
+	    	request=1;
 
 	    }
+	    else if(request===1)
+		{res.sendFile(__dirname + "/public/GotDTMF" + req.query.data + ".xml");
+         request =2;
+         }
 	    else
-		{res.sendFile(__dirname + "/public/GotDTMF" + req.query.data + ".xml");}
+	    {
+	    	res.sendFile(__dirname + "/public/GotDTMF" + req.query.data + 2 + ".xml");
+	    	request=1;
+	    }
 	})
 	
 
