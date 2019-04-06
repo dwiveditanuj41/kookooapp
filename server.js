@@ -2,22 +2,25 @@ var express = require('express');
 var http = require('https');
 var events = require('events');
 var eventEmmiter = new events.EventEmitter();
+var router=express.Router()
 
 var app = express();
+app.use('/',router);
 
-app.get('/', function(req, res){
-	
-	res.sendFile(__dirname + "/public/index.xml");
-	
-})
+router.get('/', function(req, res){
+	   
+	    console.log(req.query.data);
+	    if(!req.query.data)
+	    {
+	    	res.sendFile(__dirname + "/public/" + "index.xml");
 
-http.get('https://desolate-castle-29966.herokuapp.com/?event=GotDTMF&data=1', (resp) => {
-  app.get('/', function(req, res){
+	    }
+	    else
+		{res.sendFile(__dirname + "/public/GotDTMF" + req.query.data + ".xml");}
+	})
 	
-	res.sendFile(__dirname + "/public/GotDTMF1.xml");
-	
-})
-  });
+
+
 
 
 
