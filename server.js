@@ -1,7 +1,5 @@
 var express = require('express');
 var http = require('https');
-var events = require('events');
-var eventEmmiter = new events.EventEmitter();
 var router=express.Router()
 var app = express();
 var request;
@@ -29,11 +27,6 @@ router.get('/', function(req, res){
 	    	request=1;
 	    }
 	})
-	
-
-
-
-
 
 var server = app.listen(process.env.PORT || 3000, function(){
 	console.log("PORT is running on 3000");
